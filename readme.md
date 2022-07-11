@@ -1,12 +1,23 @@
 # Project Submission   
-Environment (template code updated to latest versions) 
-Truffle v5.5.18 (core: 5.5.18)
-Ganache v7.2.0
-Solidity - ^0.8.15 (solc-js)
-Node v16.15.1
-Web3.js v1.5.3
-webpack@5.73.0
+## Environment  
+(template code updated to 8.15)   
+Truffle v5.5.18 (core: 5.5.18)  
+Ganache v7.2.0  
+Solidity - ^0.8.15 (solc-js)  
+Node v16.15.1  
+Web3.js v1.5.3  
+webpack@5.73.0  
 
+##Rubric Walk Through  
+## 1. Smart Contract Seperation
+Utilized interrace FlightSuretyData to interact with FlightSuretyApp  
+
+## 2. Dapp Created and Used for Contract Calls  
+Utilized Webpack version 5 and Twitter Bootstrap 5.1.3  
+Inspection shows no errors or warntings  
+
+<img width="763" alt="Webpack5 Dapp running" src="https://user-images.githubusercontent.com/103458204/178373842-4a84e02a-22a1-454e-99bd-50ea0533c97b.png">
+<img width="1477" alt="Dapp Run Inspect" src="https://user-images.githubusercontent.com/103458204/178373850-0a380f66-1623-44d6-96c0-c740f2c95036.png">
 
 
 

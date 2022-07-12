@@ -35,6 +35,12 @@ Server shown operating with Oracle Transaction & Flight Ins
 9/18 functions in the Data contract have fail fast modifiers in use  
   
 ## 6. Airline Contract Initialization, Multiparty Consensus, Airline Ante  
+  
+    √ (multiparty) has correct initial isOperational() value (94ms)
+    √ (multiparty) can block access to setOperatingStatus() for non-Contract Owner account (559ms)
+    √ (multiparty) can allow access to setOperatingStatus() for Contract Owner account (105ms)
+    √ (multiparty) can block access to functions using requireIsOperational when operating status is false (170ms)  
+    
     √ (airline)    First airline is registered when contract is deployed (55ms)
     √ (airline)    First airline is registered and funded (113ms)
     √ (airline)    Registers a flight (357ms)
@@ -55,10 +61,48 @@ Server shown operating with Oracle Transaction & Flight Ins
     √ (passenger)  Can update any status code for flight status (1025ms)  
     
       
-## 8.    
+## 8. Functioning Oracle, Oracle Initialization, Oracle Updates, Oracle Functionality  
+  Contract: Oracles  
+Oracle Registered: 2, 8, 3  
+Oracle Registered: 5, 7, 0  
+Oracle Registered: 9, 7, 0  
+Oracle Registered: 6, 1, 3  
+Oracle Registered: 1, 3, 7  
+Oracle Registered: 7, 0, 6  
+Oracle Registered: 9, 6, 1  
+Oracle Registered: 4, 9, 1  
+Oracle Registered: 4, 6, 5  
+Oracle Registered: 6, 7, 3  
+Oracle Registered: 0, 3, 6  
+Oracle Registered: 9, 6, 4  
+Oracle Registered: 9, 0, 1  
+Oracle Registered: 8, 4, 5  
+Oracle Registered: 5, 3, 6  
+Oracle Registered: 8, 4, 9  
+Oracle Registered: 5, 7, 8  
+Oracle Registered: 4, 7, 6  
+Oracle Registered: 4, 0, 8  
+    √ can register oracles (6730ms)  
+    √ can request flight status (980ms)  
+    
+## Ganache  
+  
+  <img width="877" alt="Ganache" src="https://user-images.githubusercontent.com/103458204/178389692-d1a12f24-65f0-4613-88e5-2c9f3de01f60.png">
+  <img width="810" alt="Truffle Test" src="https://user-images.githubusercontent.com/103458204/178391482-424cae7f-1526-4181-8ce8-bd7376b9f48c.png">
 
-# Environment Notes for Udacity / Reviewers
-Webpack 5 now requires Polyfill, recommend updating/adding the following:
+  
+## Environment Notes for Upgrade to Solidity 8.15, WebPack 5, & Truffle 5.5
+The current template code is Soliity 4 and the infrastructure utilizes older Truffle  
+WebPack, Web3 and Bable libs that are difficult to install in a current environment  
+given dependancies.  Pairing more up to date components reduces numerous errors that  
+are difficult to debug.
+
+Template Code :  
+Very few changes are required, mostly updates to mappings within Structs, 
+storage vs. memory and visibility of functions.  
+
+Webpack 5 :  
+now requires Polyfill, recommend updating/adding the following:
 resolve: {
     extensions: [".js"],
     fallback: {
@@ -84,7 +128,10 @@ global.process = {
     nextTick: require('next-tick')
 };
 
+Open Zeppelin :  
+import "../node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol";
 
+# ORIGINAL README INCLUDED BELOW THIS LINE ..........................
 
 # FlightSurety
 
